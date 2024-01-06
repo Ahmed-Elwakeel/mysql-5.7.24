@@ -9718,7 +9718,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0boot.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -10226,7 +10226,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0crea.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -10742,7 +10742,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0dict.cc.o: storage/i
   sql/my_decimal.h \
   include/decimal.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/my_atomic.h \
   include/atomic/gcc_atomic.h \
@@ -11441,7 +11441,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0load.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -11951,7 +11951,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0mem.cc.o: storage/in
   include/my_icp.h \
   include/dur_prop.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   storage/innobase/include/dict0mem.h \
   storage/innobase/include/dict0types.h \
@@ -12618,7 +12618,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0stats.cc.o: storage/
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -13188,7 +13188,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/dict/dict0stats_bg.cc.o: stora
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -13733,7 +13733,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/eval/eval0eval.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -14304,7 +14304,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/eval/eval0proc.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -14867,7 +14867,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fil/fil0fil.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -15512,7 +15512,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fsp/fsp0file.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -16035,7 +16035,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fsp/fsp0fsp.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -17028,7 +17028,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fsp/fsp0sysspace.cc.o: storage
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -17542,7 +17542,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fts/fts0ast.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -18510,7 +18510,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fts/fts0config.cc.o: storage/i
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -19083,7 +19083,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fts/fts0fts.cc.o: storage/inno
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -19669,7 +19669,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fts/fts0opt.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -21063,7 +21063,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fts/fts0que.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -21657,7 +21657,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fts/fts0sql.cc.o: storage/inno
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -23082,7 +23082,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/fut/fut0lst.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -23594,7 +23594,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/gis/gis0geo.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -24140,7 +24140,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/gis/gis0rtree.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -24721,7 +24721,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/gis/gis0sea.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -25264,7 +25264,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/ha/ha0ha.cc.o: storage/innobas
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -26492,7 +26492,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/handler/ha_innodb.cc.o: storag
   include/my_sys.h \
   include/m_string.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   sql/sql_const.h \
   sql/auth/auth_acls.h \
@@ -27263,7 +27263,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/handler/ha_innopart.cc.o: stor
   include/my_sys.h \
   include/m_string.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   sql/sql_const.h \
   sql/auth/auth_acls.h \
@@ -27990,7 +27990,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/handler/handler0alter.cc.o: st
   include/my_sys.h \
   include/m_string.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   sql/sql_const.h \
   sql/auth/auth_acls.h \
@@ -28726,7 +28726,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/handler/i_s.cc.o: storage/inno
   sql/my_decimal.h \
   include/decimal.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/my_atomic.h \
   include/atomic/gcc_atomic.h \
@@ -29451,7 +29451,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/ibuf/ibuf0ibuf.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -30011,7 +30011,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/lock/lock0iter.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -30618,7 +30618,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/lock/lock0lock.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -31208,7 +31208,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/lock/lock0prdt.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -31769,7 +31769,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/lock/lock0wait.cc.o: storage/i
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -32381,7 +32381,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/log/log0log.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -32920,7 +32920,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/log/log0recv.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -34311,7 +34311,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/mtr/mtr0log.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -34849,7 +34849,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/mtr/mtr0mtr.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -35727,7 +35727,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/os/os0file.cc.o: storage/innob
   include/my_aes.h \
   include/my_rnd.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   sql/mysqld.h \
   include/my_bitmap.h \
@@ -37063,7 +37063,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/page/page0cur.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -37592,7 +37592,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/page/page0page.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -38180,7 +38180,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/page/page0zip.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -38736,7 +38736,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/pars/lexyy.cc.o: storage/innob
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -39275,7 +39275,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/pars/pars0grm.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -39845,7 +39845,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/pars/pars0opt.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -40435,7 +40435,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/pars/pars0pars.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -41040,7 +41040,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/pars/pars0sym.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -41620,7 +41620,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/que/que0que.cc.o: storage/inno
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -42207,7 +42207,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/read/read0read.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -42725,7 +42725,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/rem/rem0cmp.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -43264,7 +43264,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/rem/rem0rec.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -43810,7 +43810,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0ext.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -44332,7 +44332,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0ftsort.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -44919,7 +44919,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0import.cc.o: storage/i
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -45511,7 +45511,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0ins.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -46120,7 +46120,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0log.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -46745,7 +46745,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0merge.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -47249,7 +47249,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0mysql.cc.o: storage/in
   sql/my_decimal.h \
   include/decimal.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/my_atomic.h \
   include/atomic/gcc_atomic.h \
@@ -47963,7 +47963,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0purge.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -48572,7 +48572,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0quiesce.cc.o: storage/
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -49170,7 +49170,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0row.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -49735,7 +49735,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0sel.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -50350,7 +50350,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0trunc.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -50968,7 +50968,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0uins.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -51564,7 +51564,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0umod.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -52155,7 +52155,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0undo.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -52722,7 +52722,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0upd.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -53363,7 +53363,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/row/row0vers.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -53942,7 +53942,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/srv/srv0conc.cc.o: storage/inn
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -54512,7 +54512,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/srv/srv0mon.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -55062,7 +55062,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/srv/srv0srv.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -55586,7 +55586,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/srv/srv0start.cc.o: storage/in
   sql/my_decimal.h \
   include/decimal.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/my_atomic.h \
   include/atomic/gcc_atomic.h \
@@ -56347,7 +56347,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/sync/sync0arr.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -58043,7 +58043,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0i_s.cc.o: storage/inno
   include/dur_prop.h \
   sql/sql_class.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/mysql_com_server.h \
   sql/auth/sql_security_ctx.h \
@@ -58840,7 +58840,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0purge.cc.o: storage/in
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -59436,7 +59436,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0rec.cc.o: storage/inno
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -60010,7 +60010,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0roll.cc.o: storage/inn
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -60622,7 +60622,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0rseg.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -61068,7 +61068,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0sys.cc.o: storage/inno
   sql/my_decimal.h \
   include/decimal.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/my_atomic.h \
   include/atomic/gcc_atomic.h \
@@ -61720,7 +61720,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0trx.cc.o: storage/inno
   include/mysql/service_srv_session_info.h \
   include/mysql/plugin.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -62340,7 +62340,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/trx/trx0undo.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -62891,7 +62891,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/usr/usr0sess.cc.o: storage/inn
   include/mysql/plugin.h \
   include/mysql/service_srv_session_info.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   include/violite.h \
   include/pfs_socket_provider.h \
@@ -66249,7 +66249,7 @@ storage/innobase/CMakeFiles/innobase_embedded.dir/ut/ut0ut.cc.o: storage/innobas
   include/my_icp.h \
   include/dur_prop.h \
   include/mysql_com.h \
-  libbinlogevents/export/binary_log_types.h \
+  include/binary_log_types.h \
   include/my_command.h \
   storage/innobase/include/os0thread.h \
   storage/innobase/include/ut0ut.h \

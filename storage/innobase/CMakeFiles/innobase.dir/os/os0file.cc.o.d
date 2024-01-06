@@ -384,7 +384,7 @@ storage/innobase/CMakeFiles/innobase.dir/os/os0file.cc.o: \
  /home/ahmedelwakeel/mysql-5.7.24/include/my_aes.h \
  /home/ahmedelwakeel/mysql-5.7.24/include/my_rnd.h \
  /home/ahmedelwakeel/mysql-5.7.24/include/mysql_com.h \
- /home/ahmedelwakeel/mysql-5.7.24/libbinlogevents/export/binary_log_types.h \
+ /home/ahmedelwakeel/mysql-5.7.24/include/binary_log_types.h \
  /home/ahmedelwakeel/mysql-5.7.24/include/my_command.h \
  /home/ahmedelwakeel/mysql-5.7.24/sql/mysqld.h \
  /home/ahmedelwakeel/mysql-5.7.24/include/my_bitmap.h \
