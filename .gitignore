@@ -5,4 +5,4 @@
 !.gitignore
 !./storage/innobase/
 
-./storage/innobase/CMakeFiles/*
+./storage/innobase/CMakeFiles/
