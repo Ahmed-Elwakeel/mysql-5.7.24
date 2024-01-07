@@ -163,9 +163,13 @@ struct buf_pool_info_t{
 	ulint	n_pages_made_young;	/*!< number of pages made young */
 	ulint	n_pages_not_made_young;	/*!< number of pages not made young */
 	ulint	n_pages_read;		/*!< buf_pool->n_pages_read */
+	ulint	n_undo_pages_read;		/*!< buf_pool->n_undo_pages_read */
+
 	ulint	n_pages_created;	/*!< buf_pool->n_pages_created */
 	ulint	n_pages_written;	/*!< buf_pool->n_pages_written */
 	ulint	n_page_gets;		/*!< buf_pool->n_page_gets */
+	ulint	n_undo_page_gets;		/*!< buf_pool->n_undo_page_gets */
+
 	ulint	n_ra_pages_read_rnd;	/*!< buf_pool->n_ra_pages_read_rnd,
 					number of pages readahead */
 	ulint	n_ra_pages_read;	/*!< buf_pool->n_ra_pages_read, number
@@ -175,7 +179,8 @@ struct buf_pool_info_t{
 					without access */
 	ulint	n_page_get_delta;	/*!< num of buffer pool page gets since
 					last printout */
-
+	ulint	n_undo_page_get_delta;	/*!< num of buffer pool undo page gets since
+					last printout */
 	/* Buffer pool access stats */
 	double	page_made_young_rate;	/*!< page made young rate in pages
 					per second */
@@ -186,7 +191,8 @@ struct buf_pool_info_t{
 	double	pages_written_rate;	/*!< num of  pages written per second */
 	ulint	page_read_delta;	/*!< num of pages read since last
 					printout */
-	
+	ulint	undo_page_read_delta;	/*!< num of pages read since last
+					printout */
 	ulint	young_making_delta;	/*!< num of pages made young since
 					last printout */
 	ulint	not_young_making_delta;	/*!< num of pages not make young since
@@ -2027,7 +2033,15 @@ struct buf_pool_stat_t{
 				counted as page gets; this field
 				is NOT protected by the buffer
 				pool mutex */
+	ulint	n_undo_page_gets;	/*!< number of undo page gets performed;
+				also successful searches through
+				the adaptive hash index are
+				counted as page gets; this field
+				is NOT protected by the buffer
+				pool mutex */
 	ulint	n_pages_read;	/*!< number read operations */
+    ulint	n_undo_pages_read;	/*!< number of undo pages read operations */
+
 	ulint	n_pages_written;/*!< number write operations */
 	ulint	n_pages_created;/*!< number of pages created
 				in the pool with no read */
