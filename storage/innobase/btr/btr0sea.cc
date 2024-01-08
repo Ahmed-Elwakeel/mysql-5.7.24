@@ -1139,6 +1139,9 @@ btr_search_guess_on_hash(
 		buf_pool_t*	buf_pool = buf_pool_from_bpage(&block->page);
 
 		++buf_pool->stat.n_page_gets;
+		if(Tablespace::is_undo_tablespace(block->page.id.space())){
+			++buf_pool->stat.n_undo_page_gets;
+		}
 	}
 
 	return(TRUE);

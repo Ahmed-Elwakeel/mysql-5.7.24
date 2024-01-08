@@ -520,7 +520,9 @@ buf_get_total_stat(
 
 		buf_stat = &buf_pool->stat;
 		tot_stat->n_page_gets += buf_stat->n_page_gets;
+		tot_stat->n_undo_page_gets += buf_stat->n_undo_page_gets;
 		tot_stat->n_pages_read += buf_stat->n_pages_read;
+		tot_stat->n_undo_pages_read += buf_stat->n_undo_pages_read;
 		tot_stat->n_pages_written += buf_stat->n_pages_written;
 		tot_stat->n_pages_created += buf_stat->n_pages_created;
 		tot_stat->n_ra_pages_read_rnd += buf_stat->n_ra_pages_read_rnd;
@@ -3649,9 +3651,11 @@ buf_page_get_zip(
 	ibool		discard_attempted = FALSE;
 	ibool		must_read;
 	buf_pool_t*	buf_pool = buf_pool_get(page_id);
-
+	
 	buf_pool->stat.n_page_gets++;
-
+	if(Tablespace::is_undo_tablespace(bpage->id.space())){
+		buf_pool->stat.n_undo_page_gets++;
+	}
 	for (;;) {
 lookup:
 
@@ -4104,6 +4108,9 @@ buf_page_get_gen(
 	      || ibuf_page_low(page_id, page_size, FALSE, file, line, NULL));
 
 	buf_pool->stat.n_page_gets++;
+	if(Tablespace::is_undo_tablespace(page_id.space())){
+		buf_pool->stat.n_undo_page_gets++;
+	}
 	hash_lock = buf_page_hash_lock_get(buf_pool, page_id);
 loop:
 	block = guess;
@@ -4780,7 +4787,9 @@ buf_page_optimistic_get(
 
 	buf_pool = buf_pool_from_block(block);
 	buf_pool->stat.n_page_gets++;
-
+	if(Tablespace::is_undo_tablespace(block->page.id.space())){
+		buf_pool->stat.n_undo_page_gets++;
+	}
 	return(TRUE);
 }
 
@@ -4888,7 +4897,9 @@ buf_page_get_known_nowait(
 	ut_a((mode == BUF_KEEP_OLD) || ibuf_count_get(block->page.id) == 0);
 #endif
 	buf_pool->stat.n_page_gets++;
-
+	if(Tablespace::is_undo_tablespace(block->page.id.space())){
+		buf_pool->stat.n_undo_page_gets++;
+	}
 	return(TRUE);
 }
 
@@ -4975,7 +4986,9 @@ buf_page_try_get_func(
 	buf_block_dbg_add_level(block, SYNC_NO_ORDER_CHECK);
 
 	buf_pool->stat.n_page_gets++;
-
+	if(Tablespace::is_undo_tablespace(block->page.id.space())){
+		buf_pool->stat.n_undo_page_gets++;
+	}
 #ifdef UNIV_IBUF_COUNT_DEBUG
 	ut_a(ibuf_count_get(block->page.id) == 0);
 #endif /* UNIV_IBUF_COUNT_DEBUG */
@@ -5860,7 +5873,10 @@ corrupt:
 		ut_ad(buf_pool->n_pend_reads > 0);
 		buf_pool->n_pend_reads--;
 		buf_pool->stat.n_pages_read++;
-
+		// Only increment the n_undo_pages_read if the page belongs to the undp table space
+		if(Tablespace::is_undo_tablespace(bpage->id.space())){
+			buf_pool->stat.n_undo_pages_read++;
+		}
 		if (uncompressed) {
 			rw_lock_x_unlock_gen(&((buf_block_t*) bpage)->lock,
 					     BUF_IO_READ);
@@ -6572,9 +6588,11 @@ buf_stats_aggregate_pool_info(
 	total_info->n_pages_made_young += pool_info->n_pages_made_young;
 	total_info->n_pages_not_made_young += pool_info->n_pages_not_made_young;
 	total_info->n_pages_read += pool_info->n_pages_read;
+	total_info->n_undo_pages_read += pool_info->n_undo_pages_read;
 	total_info->n_pages_created += pool_info->n_pages_created;
 	total_info->n_pages_written += pool_info->n_pages_written;
 	total_info->n_page_gets += pool_info->n_page_gets;
+	total_info->n_undo_page_gets += pool_info->n_undo_page_gets;
 	total_info->n_ra_pages_read_rnd += pool_info->n_ra_pages_read_rnd;
 	total_info->n_ra_pages_read += pool_info->n_ra_pages_read;
 	total_info->n_ra_pages_evicted += pool_info->n_ra_pages_evicted;
@@ -6585,7 +6603,9 @@ buf_stats_aggregate_pool_info(
 	total_info->pages_created_rate += pool_info->pages_created_rate;
 	total_info->pages_written_rate += pool_info->pages_written_rate;
 	total_info->n_page_get_delta += pool_info->n_page_get_delta;
+	total_info->n_undo_page_get_delta += pool_info->n_undo_page_get_delta;
 	total_info->page_read_delta += pool_info->page_read_delta;
+	total_info->undo_page_read_delta += pool_info->undo_page_read_delta;
 	total_info->young_making_delta += pool_info->young_making_delta;
 	total_info->not_young_making_delta += pool_info->not_young_making_delta;
 	total_info->pages_readahead_rnd_rate += pool_info->pages_readahead_rnd_rate;
@@ -6609,6 +6629,7 @@ buf_stats_get_pool_info(
 	buf_pool_info_t*	all_pool_info)	/*!< in/out: buffer pool info
 						to fill */
 {
+
 	buf_pool_info_t*	pool_info;
 	time_t			current_time;
 	double			time_elapsed;
@@ -6659,12 +6680,14 @@ buf_stats_get_pool_info(
 		buf_pool->stat.n_pages_not_made_young;
 
 	pool_info->n_pages_read = buf_pool->stat.n_pages_read;
+	pool_info->n_undo_pages_read = buf_pool->stat.n_undo_pages_read;
 
 	pool_info->n_pages_created = buf_pool->stat.n_pages_created;
 
 	pool_info->n_pages_written = buf_pool->stat.n_pages_written;
 
 	pool_info->n_page_gets = buf_pool->stat.n_page_gets;
+	pool_info->n_undo_page_gets = buf_pool->stat.n_undo_page_gets;
 
 	pool_info->n_ra_pages_read_rnd = buf_pool->stat.n_ra_pages_read_rnd;
 	pool_info->n_ra_pages_read = buf_pool->stat.n_ra_pages_read;
@@ -6694,6 +6717,7 @@ buf_stats_get_pool_info(
 	pool_info->n_page_get_delta = buf_pool->stat.n_page_gets
 				      - buf_pool->old_stat.n_page_gets;
 
+	
 	if (pool_info->n_page_get_delta) {
 		pool_info->page_read_delta = buf_pool->stat.n_pages_read
 					     - buf_pool->old_stat.n_pages_read;
@@ -6706,6 +6730,13 @@ buf_stats_get_pool_info(
 			buf_pool->stat.n_pages_not_made_young
 			- buf_pool->old_stat.n_pages_not_made_young;
 	}
+	pool_info->n_undo_page_get_delta = buf_pool->stat.n_undo_page_gets
+				      - buf_pool->old_stat.n_undo_page_gets;
+	if(pool_info->n_undo_page_get_delta){
+		pool_info->undo_page_read_delta = buf_pool->stat.n_undo_pages_read
+					     - buf_pool->old_stat.n_undo_pages_read;
+	}
+
 	pool_info->pages_readahead_rnd_rate =
 		 (buf_pool->stat.n_ra_pages_read_rnd
 		  - buf_pool->old_stat.n_ra_pages_read_rnd) / time_elapsed;
@@ -6731,6 +6762,7 @@ buf_stats_get_pool_info(
 
 	buf_refresh_io_stats(buf_pool);
 	buf_pool_mutex_exit(buf_pool);
+
 }
 
 /*********************************************************************//**
@@ -6783,15 +6815,56 @@ buf_print_io_instance(
 		pool_info->pages_written_rate);
 
 	if (pool_info->n_page_get_delta) {
-		fprintf(file,
-			"Buffer pool hit rate %lu / 1000,"
-			" young-making rate %lu / 1000 not %lu / 1000\n",
-			(ulong) (1000 - (1000 * pool_info->page_read_delta
-					 / pool_info->n_page_get_delta)),
-			(ulong) (1000 * pool_info->young_making_delta
-				 / pool_info->n_page_get_delta),
-			(ulong) (1000 * pool_info->not_young_making_delta
-				 / pool_info->n_page_get_delta));
+		if(pool_info->n_undo_page_get_delta){
+			fprintf(file,
+				"Buffer pool hit rate %lu / 1000, for values %lu , /  %lu\n"
+				"Undo pages buffer pool hit rate %lu / 1000, for values %lu , /  %lu\n"
+				"Non Undo pages buffer pool hit rate %lu / 1000, for values %lu , /  %lu\n"
+				"Undo pages reads vs other pages reads %lu / 1000, for values %lu , /  %lu\n"
+				"Undo pages gets vs all pages gets %lu / 1000, for values %lu , /  %lu\n"
+				"young-making rate %lu / 1000 not %lu / 1000\n",
+				(ulong) (1000 - (1000 * pool_info->page_read_delta /
+                            pool_info->n_page_get_delta)),
+				pool_info->page_read_delta,
+				pool_info->n_page_get_delta,
+
+				(ulong) (1000 - (1000 * pool_info->undo_page_read_delta /
+                            pool_info->n_undo_page_get_delta)),
+				pool_info->undo_page_read_delta,
+				pool_info->n_undo_page_get_delta,
+
+				(ulong) (1000 - (1000 * (pool_info->page_read_delta - pool_info->undo_page_read_delta) /
+                            (pool_info->n_page_get_delta - pool_info->n_undo_page_get_delta) ) ),
+				pool_info->page_read_delta - pool_info->undo_page_read_delta,
+				pool_info->n_page_get_delta - pool_info->n_undo_page_get_delta,
+
+				(ulong) (1000 * pool_info->n_undo_pages_read
+						/ pool_info->n_pages_read),
+				pool_info->n_undo_pages_read,
+				pool_info->n_pages_read,
+
+				(ulong) (1000 * pool_info->n_undo_page_gets
+						/ pool_info->n_page_gets),
+				pool_info->n_undo_page_gets,
+				pool_info->n_page_gets,
+				
+				(ulong) (1000 * pool_info->young_making_delta
+					/ pool_info->n_page_get_delta),
+				(ulong) (1000 * pool_info->not_young_making_delta
+					/ pool_info->n_page_get_delta));
+		}else{
+			fprintf(file,
+				"Buffer pool hit rate %lu / 1000, for values %lu , /  %lu\n"
+				" young-making rate %lu / 1000 not %lu / 1000\n",
+				(ulong) (1000 - (1000 * pool_info->page_read_delta
+						/ pool_info->n_page_get_delta)),
+				pool_info->page_read_delta,
+				pool_info->n_page_get_delta,
+				(ulong) (1000 * pool_info->young_making_delta
+					/ pool_info->n_page_get_delta),
+				(ulong) (1000 * pool_info->not_young_making_delta
+					/ pool_info->n_page_get_delta));
+		}
 	} else {
 		fputs("No buffer pool page gets since the last printout\n",
 		      file);
@@ -6827,7 +6900,6 @@ buf_print_io(
 	ulint			i;
 	buf_pool_info_t*	pool_info;
 	buf_pool_info_t*	pool_info_total;
-
 	/* If srv_buf_pool_instances is greater than 1, allocate
 	one extra buf_pool_info_t, the last one stores
 	aggregated/total values from all pools */
@@ -6848,22 +6920,20 @@ buf_print_io(
 		buf_pool_t*	buf_pool;
 
 		buf_pool = buf_pool_from_array(i);
-
 		/* Fetch individual buffer pool info and calculate
 		aggregated stats along the way */
 		buf_stats_get_pool_info(buf_pool, i, pool_info);
-
 		/* If we have more than one buffer pool, store
 		the aggregated stats  */
 		if (srv_buf_pool_instances > 1) {
 			buf_stats_aggregate_pool_info(pool_info_total,
 						      &pool_info[i]);
 		}
+		
 	}
 
 	/* Print the aggreate buffer pool info */
 	buf_print_io_instance(pool_info_total, file);
-
 	/* If there are more than one buffer pool, print each individual pool
 	info */
 	if (srv_buf_pool_instances > 1) {
@@ -6872,7 +6942,40 @@ buf_print_io(
 		"----------------------\n", file);
 
 		for (i = 0; i < srv_buf_pool_instances; i++) {
+			
+			
+
 			fprintf(file, "---BUFFER POOL " ULINTPF "\n", i);
+			// ### ADDED CODE #####
+			buf_pool_t*	buf_pool;
+
+			buf_pool = buf_pool_from_array(i);
+			buf_pool_mutex_enter(buf_pool);
+			ulint undo_pages_count = 0;
+			ulint other_pages_count = 0;
+			
+			for (const buf_page_t* bpage = UT_LIST_GET_FIRST(buf_pool->LRU);
+			bpage != NULL;
+			bpage = UT_LIST_GET_NEXT(LRU, bpage)) {
+				mutex_enter(buf_page_get_mutex(bpage));
+				if(Tablespace::is_undo_tablespace(bpage->id.space())){
+					undo_pages_count +=1;
+				}else{
+					other_pages_count +=1;
+				}
+				mutex_exit(buf_page_get_mutex(bpage));
+
+			}
+			buf_pool_mutex_exit(buf_pool);
+			fprintf(file, 
+					"Undo pages count :- %lu \n "
+					"Other pages count :- %lu \n"
+					"Percentage of undo pages :- %lu \n",
+			 		undo_pages_count,
+					other_pages_count,
+					(ulong) (1000 * undo_pages_count /
+                           ( other_pages_count + undo_pages_count) ));
+			// ### ADDED CODE #####
 			buf_print_io_instance(&pool_info[i], file);
 		}
 	}
